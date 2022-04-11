@@ -1,11 +1,16 @@
-...
+import requests
+import telegram
+import telegram.ext
+import os
+import time
+from dotenv import load_dotenv
 
 load_dotenv()
 
 
-PRACTICUM_TOKEN = ...
-TELEGRAM_TOKEN = ...
-TELEGRAM_CHAT_ID = ...
+PRACTICUM_TOKEN = os.getenv('PRACTICUM_TOKEN')
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+TELEGRAM_CHAT_ID = 5197639266
 
 RETRY_TIME = 600
 ENDPOINT = 'https://practicum.yandex.ru/api/user_api/homework_statuses/'
@@ -20,14 +25,16 @@ HOMEWORK_STATUSES = {
 
 
 def send_message(bot, message):
-    ...
+    bot.send_message(TELEGRAM_CHAT_ID, message)
 
 
 def get_api_answer(current_timestamp):
-    timestamp = current_timestamp or int(time.time())
-    params = {'from_date': timestamp}
+    timestamp = current_timestamp or int(time.time()) #
+    params = {'from_date': timestamp} #
 
-    ...
+    response = requests.get(ENDPOINT).json()
+    # random_cat = response[0].get('url')
+    # return random_cat
 
 
 def check_response(response):
