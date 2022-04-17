@@ -63,6 +63,7 @@ def get_api_answer(current_timestamp):
 
 def check_response(response):
     """Проверяет ответ API на корректность."""
+    homework = response['homeworks']
     if not response:
         raise NoResponseError('Нет ответа от API')
     if type(response) is not dict:
@@ -70,8 +71,8 @@ def check_response(response):
     if 'homeworks' not in response:
         logging.error('В ответе нет ключа homeworks')
         raise KeyError('В ответе нет ключа homeworks')
-    homework = response['homeworks']
-    return homework
+    if isinstance(homework, list):
+        return homework
 
 
 def parse_status(homework):
