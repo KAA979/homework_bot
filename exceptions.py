@@ -11,3 +11,8 @@ class NoResponseError(Exception):
 class UndocumentedStatusError(Exception):
     """Не существующий статус домашней работы."""
     pass
+
+
+class MissingVariablesError(Exception):
+    """Не существующий статус домашней работы."""
+    pass
