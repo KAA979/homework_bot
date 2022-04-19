@@ -9,8 +9,10 @@ import requests
 import telegram
 from dotenv import load_dotenv
 
-from exceptions import (GetApiAnswerError, MissingVariablesError,
-                        NoResponseError, UndocumentedStatusError)
+from exceptions import GetApiAnswerError
+from exceptions import MissingVariablesError
+from exceptions import NoResponseError
+from exceptions import UndocumentedStatusError
 
 load_dotenv()
 
@@ -68,7 +70,7 @@ def check_response(response):
     homework = response['homeworks']
     if not response:
         raise NoResponseError('Нет ответа от API')
-    if type(response) is not dict:
+    if not isinstance(response, dict):
         raise TypeError('Формат ответа отличается от словаря')
     if 'homeworks' not in response:
         logging.error('В ответе нет ключа homeworks')
