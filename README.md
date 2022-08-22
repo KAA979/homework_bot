@@ -16,6 +16,8 @@
 > **Note**
 > 
 > **Реализован с помощью [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot).**
+
+---
 ### Инструкция по развёртыванию:
 
 Клонировать репозиторий и перейти в него в командной строке:
@@ -57,4 +59,6 @@ CHAT_ID=...
 ```bash
 python homework.py
 ```
+
+---
 Автор: [Андрей Казанджян](https://github.com/KAA979) &#128013;
