@@ -13,7 +13,9 @@
 
 Если домашку ещё не взяли в работу — её не будет в выдаче.
 
-**Реализован с помощью [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot).**
+> **Note**
+> 
+> **Реализован с помощью [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot).**
 ### Инструкция по развёртыванию:
 
 Клонировать репозиторий и перейти в него в командной строке:
